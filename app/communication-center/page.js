@@ -1,4 +1,4 @@
-"use client"; // Make sure this file is treated as a client-side component
+"use client"; 
 
 import { useState } from "react";
 import Link from "next/link";
