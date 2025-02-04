@@ -1,8 +1,15 @@
 "use client"
+import React , {useState} from 'react'
+
 import Image from "next/image";
 import Link from "next/link";
+import OptInPopup from "@/components/OptInPopup";
 
 export default function Home() {
+  const [consentGiven, setConsentGiven] = useState(false);
+  const handleConsent = () => {
+    setConsentGiven(true);
+  };
   const features = [
     {
       title: "Emergency Response",
@@ -20,7 +27,7 @@ export default function Home() {
   return (
     <>
     <div className="min-h-screen bg-white">
-
+    {!consentGiven && <OptInPopup onConsentGiven={handleConsent} />}
       <nav className="flex justify-between items-center px-6 py-4 bg-white">
         <div className="flex items-center">
         <Image
