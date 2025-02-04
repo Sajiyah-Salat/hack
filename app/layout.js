@@ -32,13 +32,15 @@ export default function RootLayout({ children }) {
         <meta name="description" content="Unlimited Online Backup and Cloud Storage" />
       </Head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* Render Navbar only if it's not the Home or Login page */}
-        {!isHomePage && !isLoginPage && !isSignupPage && <Navbar />}
+<div className="flex flex-col min-h-screen">
+          {/* Render Navbar only if it's not the Home or Login page */}
+          {!isHomePage && !isLoginPage && !isSignupPage && <Navbar />}
         
         {children}
         
         {/* Render Footer only if it's not the Home page */}
         {!isHomePage && <Footer />}
+</div>
       </body>
     </html>
   );
